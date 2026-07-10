@@ -1,30 +1,7 @@
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { ArrowRightIcon } from '@/components/ui/icons';
-
-const services = [
-  {
-    name: 'Consulta inicial',
-    duration: '60–75 min',
-    description:
-      'Evaluación completa: historia clínica, composición corporal, hábitos y objetivos. Salimos con un plan personalizado desde el día uno.',
-    highlight: 'Ideal para empezar',
-  },
-  {
-    name: 'Consulta de seguimiento',
-    duration: '30–45 min',
-    description:
-      'Revisamos avances, ajustamos el plan y resolvemos dudas. El acompañamiento constante es donde ocurren los resultados.',
-    highlight: 'Ajuste continuo',
-  },
-  {
-    name: 'Planes personalizados',
-    duration: 'Programa',
-    description:
-      'Programas de nutrición clínica y wellness diseñados para tu objetivo: composición corporal, salud metabólica o rendimiento.',
-    highlight: 'A tu medida',
-  },
-];
+import { services } from '@/lib/services';
 
 export function ServicesPreview() {
   return (
@@ -43,7 +20,7 @@ export function ServicesPreview() {
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {services.map((service) => (
           <article
-            key={service.name}
+            key={service.slug}
             className="group flex flex-col rounded-3xl border border-espresso/10 bg-ivory p-8 transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:border-clay/30 hover:shadow-card"
           >
             <span className="eyebrow text-gold">{service.highlight}</span>
@@ -55,7 +32,7 @@ export function ServicesPreview() {
               {service.description}
             </p>
             <Button
-              href="/servicios"
+              href={`/servicios#${service.slug}`}
               variant="ghost"
               className="mt-6 self-start px-0"
             >

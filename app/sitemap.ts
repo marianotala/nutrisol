@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
     { path: '/', priority: 1, freq: 'weekly' },
+    { path: '/servicios', priority: 0.9, freq: 'monthly' },
     { path: '/calculadora-de-macros', priority: 0.9, freq: 'monthly' },
     { path: '/ubicaciones', priority: 0.8, freq: 'monthly' },
   ];
