@@ -8,8 +8,8 @@
 export const site = {
   name: 'Nutrisol',
   // Nombre profesional de la nutrióloga (placeholder)
-  practitioner: 'Dra. Valeria Ríos',
-  credentials: 'Nutrióloga clínica certificada · Cédula Prof. 0000000',
+  practitioner: 'Lic. Solange Delgado',
+  credentials: 'Nutrióloga clínica certificada',
   tagline: 'Nutrición clínica y wellness personalizado en Ciudad de México',
   description:
     'Consulta de nutrición clínica con enfoque en wellness para profesionales de CDMX. Planes personalizados, acompañamiento cercano y resultados sostenibles. Consultorios en Interlomas y Polanco.',
