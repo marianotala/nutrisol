@@ -61,6 +61,12 @@ export type Location = {
   geo: { lat: number; lng: number };
   phone: string;
   hours: { day: string; time: string }[];
+  /** Horarios estructurados para schema.org (openingHoursSpecification). */
+  openingHours: { days: string[]; opens: string; closes: string }[];
+  /** Descripción corta orientada a SEO local. */
+  blurb: string;
+  /** Referencias / zonas cercanas para contexto local. */
+  nearby: string[];
   // URL de embed de Google Maps (placeholder — reemplazar)
   mapEmbedUrl: string;
   mapLink: string;
@@ -83,6 +89,17 @@ export const locations: Location[] = [
       { day: 'Sábado', time: '9:00 – 14:00' },
       { day: 'Domingo', time: 'Cerrado' },
     ],
+    openingHours: [
+      {
+        days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '19:00',
+      },
+      { days: ['Saturday'], opens: '09:00', closes: '14:00' },
+    ],
+    blurb:
+      'Consulta de nutrición clínica y wellness en Interlomas, Huixquilucan. Atención personalizada a minutos de Bosque Real, Vista Hermosa y La Herradura, con fácil acceso y estacionamiento.',
+    nearby: ['Bosque Real', 'Vista Hermosa', 'La Herradura', 'Lomas Anáhuac'],
     mapEmbedUrl:
       'https://www.google.com/maps?q=Interlomas,Huixquilucan&output=embed',
     mapLink: 'https://maps.google.com/?q=Interlomas+Huixquilucan',
@@ -103,6 +120,17 @@ export const locations: Location[] = [
       { day: 'Sábado', time: '10:00 – 15:00' },
       { day: 'Domingo', time: 'Cerrado' },
     ],
+    openingHours: [
+      {
+        days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '10:00',
+        closes: '20:00',
+      },
+      { days: ['Saturday'], opens: '10:00', closes: '15:00' },
+    ],
+    blurb:
+      'Consulta de nutrición clínica y wellness en Polanco, sobre Av. Presidente Masaryk. Atención personalizada en el corazón de Miguel Hidalgo, cerca de Polanco, Anzures y Bosque de Chapultepec.',
+    nearby: ['Polanco', 'Anzures', 'Chapultepec', 'Lomas de Chapultepec'],
     mapEmbedUrl:
       'https://www.google.com/maps?q=Polanco,CDMX&output=embed',
     mapLink: 'https://maps.google.com/?q=Polanco+CDMX',
@@ -112,4 +140,9 @@ export const locations: Location[] = [
 /** Construye un enlace de WhatsApp con mensaje pre-cargado. */
 export function whatsappLink(message: string = site.whatsappMessage): string {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+/** Devuelve una ubicación por su slug (o undefined si no existe). */
+export function getLocation(slug: string): Location | undefined {
+  return locations.find((loc) => loc.slug === slug);
 }
