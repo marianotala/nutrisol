@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------
+   Variables CSS — reflejan los tokens de tailwind.config.ts para
+   usarlas fuera de utilidades (gradientes, SVG, sombras custom).
+--------------------------------------------------------------- */
+:root {
+  --ivory: #faf6f0;
+  --linen: #f2ebdf;
+  --sand: #e7dbc9;
+  --espresso: #33291f;
+  --taupe: #7a6e60;
+  --clay: #b8674a;
+  --gold: #c6a15b;
+  --sage: #9ca891;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-ivory text-espresso font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--clay);
+    color: var(--ivory);
+  }
+
+  /* Focus visible consistente y accesible */
+  :where(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid var(--clay);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Contenedor centrado estándar */
+  .container-base {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+
+  /* Etiqueta / kicker sobre títulos de sección */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-clay;
+  }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
