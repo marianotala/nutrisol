@@ -26,19 +26,14 @@ export function FinalCta() {
               puedas mantener. Atención presencial en Interlomas y Polanco.
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button
-                href={site.booking.url}
-                size="lg"
-                className="bg-ivory text-espresso hover:bg-linen hover:text-espresso"
-              >
+              <Button href={site.booking.url} size="lg" variant="light">
                 {site.booking.label}
                 <ArrowRightIcon className="h-4 w-4" />
               </Button>
               <Button
                 href={whatsappLink()}
                 size="lg"
-                variant="secondary"
-                className="text-ivory ring-ivory/40 hover:text-ivory hover:ring-ivory"
+                variant="outlineLight"
               >
                 Escríbeme por WhatsApp
               </Button>

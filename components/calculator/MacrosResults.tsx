@@ -121,10 +121,7 @@ export function MacrosResults({
           vida. Agenda una consulta y lo diseñamos juntos.
         </p>
         <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button
-            href={site.booking.url}
-            className="bg-ivory text-espresso hover:bg-linen hover:text-espresso"
-          >
+          <Button href={site.booking.url} variant="light">
             {site.booking.label}
             <ArrowRightIcon className="h-4 w-4" />
           </Button>
@@ -132,8 +129,7 @@ export function MacrosResults({
             href={whatsappLink(
               'Hola, acabo de usar la calculadora de macros y me gustaría agendar una consulta 🌿',
             )}
-            variant="secondary"
-            className="text-ivory ring-ivory/40 hover:text-ivory hover:ring-ivory"
+            variant="outlineLight"
           >
             WhatsApp
           </Button>

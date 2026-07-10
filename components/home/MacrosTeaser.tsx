@@ -26,11 +26,7 @@ export function MacrosTeaser() {
             fricción — directo al resultado.
           </p>
           <div className="mt-9">
-            <Button
-              href="/calculadora-de-macros"
-              size="lg"
-              className="bg-ivory text-espresso hover:bg-linen hover:text-espresso"
-            >
+            <Button href="/calculadora-de-macros" size="lg" variant="light">
               Usar la calculadora
               <ArrowRightIcon className="h-4 w-4" />
             </Button>

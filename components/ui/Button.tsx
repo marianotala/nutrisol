@@ -2,7 +2,12 @@ import Link from 'next/link';
 import { cn } from '@/lib/cn';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type Variant = 'primary' | 'secondary' | 'ghost';
+type Variant =
+  | 'primary'
+  | 'secondary'
+  | 'ghost'
+  | 'light'
+  | 'outlineLight';
 type Size = 'md' | 'lg';
 
 const base =
@@ -14,6 +19,12 @@ const variants: Record<Variant, string> = {
   secondary:
     'bg-transparent text-espresso ring-1 ring-inset ring-espresso/20 hover:ring-clay hover:text-clay',
   ghost: 'bg-transparent text-clay hover:text-clay-dark',
+  // Sobre fondos oscuros: botón claro (blanco)
+  light:
+    'bg-ivory text-espresso shadow-soft hover:bg-linen hover:shadow-card hover:-translate-y-0.5',
+  // Sobre fondos oscuros: botón con contorno claro
+  outlineLight:
+    'bg-transparent text-ivory ring-1 ring-inset ring-ivory/40 hover:ring-ivory',
 };
 
 const sizes: Record<Size, string> = {

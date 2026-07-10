@@ -150,19 +150,14 @@ export default function LocationPage({ params }: Params) {
                 horario o cómo llegar, escríbeme por WhatsApp.
               </p>
               <div className="mt-6 flex flex-col gap-3">
-                <Button
-                  href={site.booking.url}
-                  size="lg"
-                  className="bg-ivory text-espresso hover:bg-linen hover:text-espresso"
-                >
+                <Button href={site.booking.url} size="lg" variant="light">
                   {site.booking.label}
                   <ArrowRightIcon className="h-4 w-4" />
                 </Button>
                 <Button
                   href={whatsappLink(bookingMessage)}
                   size="lg"
-                  variant="secondary"
-                  className="text-ivory ring-ivory/40 hover:text-ivory hover:ring-ivory"
+                  variant="outlineLight"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   WhatsApp

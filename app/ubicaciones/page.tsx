@@ -88,10 +88,7 @@ export default function UbicacionesPage() {
             que mejor se adapten a ti.
           </p>
           <div className="mt-7">
-            <Button
-              href={site.booking.url}
-              className="bg-ivory text-espresso hover:bg-linen hover:text-espresso"
-            >
+            <Button href={site.booking.url} variant="light">
               {site.booking.label}
             </Button>
           </div>
