@@ -7,14 +7,14 @@
    usarlas fuera de utilidades (gradientes, SVG, sombras custom).
 --------------------------------------------------------------- */
 :root {
-  --ivory: #faf6f0;
-  --linen: #f2ebdf;
-  --sand: #e7dbc9;
-  --espresso: #33291f;
-  --taupe: #7a6e60;
-  --clay: #b8674a;
-  --gold: #c6a15b;
-  --sage: #9ca891;
+  --ivory: #fbfdfd;
+  --linen: #eff6f5;
+  --sand: #d8e7e5;
+  --espresso: #123b37;
+  --taupe: #5e736f;
+  --clay: #0d7f74;
+  --gold: #4fb0a4;
+  --sage: #6fa8b5;
 }
 
 @layer base {
